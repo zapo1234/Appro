@@ -1,0 +1,11 @@
+{% extends 'toto.html.twig' %}
+
+{% block title %}New Toto{% endblock %}
+
+{% block body %}
+    <h1>Create new Toto</h1>
+
+    {{ include('toto/_form.html.twig') }}
+   <div></div><br/>
+    <a href="{{ path('toto_index') }}">Retour au listing </a>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'toto.html.twig' %}
+
+{% block title %}Toto index{% endblock %}
+
+{% block body %}
+    <h1>Lsting toto</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Label</th>
+                <th>Completed</th>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Fonctions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for toto in totos %}
+            <tr>
+                <td>{{ toto.id }}</td>
+                <td>{{ toto.label }}</td>
+                <td>{{ toto.completed }}</td>
+                <td>{{ toto.name }}</td>
+                <td>{{ toto.number }}</td>
+                <td>
+                    <a href="{{ path('toto_show', {'id': toto.id}) }}"><button class="voir">show </button></button></a>
+                    <a href="{{ path('toto_edit', {'id': toto.id}) }}"><button class="modifier">modifier</button></a>
+                    <a href="{{ path('toto_delete', {'id': toto.id}) }}"><button class="suprimer">delete</button></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Listing des totos</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table><br/>
+    {{ knp_pagination_render(totos) }}
+    <div></div><br/>
+    <a href="{{ path('toto_new') }}"><button class="bt">Ajouter un toto</button></a>
+    {# créer un form id unique pour delete un toto #}
+     <div class="form" style="display:none">
+    <form method="post" action="">
+    <h2>Êtes-vous sûr de supprimer ce toto ?</h2>
+    <input type="hidden" id="token_id" name="token_id"><br/>
+    <button type="button"  class="annuler">Annuler</button>  <button type="button" type="submit" class="btns">Delete</button>
+    </div>
+</form>
+
+<div id="pak"></div>
+    <div id="result"></div><!--response retour request ajax-->
+{% endblock %}

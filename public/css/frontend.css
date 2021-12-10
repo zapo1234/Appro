@@ -1,0 +1,169 @@
+@font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Bold.ttf") format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato-Light.ttf") format('truetype');
+    font-weight: normal;
+}
+
+
+body{
+    padding: 1rem;
+    margin: 0;
+    font-family: Lato;
+}
+
+p{
+    padding: 0;
+}
+
+.top-nav {
+    height: 80px;
+    background-color: darkgrey;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.logo {
+    background-color: #2ea2ea;
+    padding: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: dimgrey;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.content{
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px
+}
+
+.content h1.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content .wrapper {
+    display: flex;
+}
+
+.content .inner-text {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+}
+
+.inner-text p:first-child {
+    margin-top: 0;
+}
+
+.bg-color-text {
+    background-color: #2ea2ea;
+    padding: 10px;
+}
+
+.bg-color-text p {
+    color: #fff;
+}
+
+.container {
+    margin-top: 1rem;
+    background-color: #2ea2ea;
+    color: #fff;
+    font-family:arial;
+    font-size:1rem;
+}
+
+.container h2 {
+    padding-top: 2rem;
+    text-align: center;
+    color:black;
+}
+
+.first-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 100px;
+    margin-right: 100px;
+    gap: 20px;
+    font-family: arial;
+}
+.second-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 200px;
+    margin-right: 200px;
+    gap: 20px;
+}
+
+.flex {
+    display: flex!important;
+}
+
+.btns-menu {
+    display: none;
+}
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+
+@media only screen and (max-width: 450px) {
+    .first-row, .second-row, .content {
+        grid-template-columns:1fr;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .logo{display:none;}
+
+    .btns-menu{
+        display: block;
+        margin-left:50%;
+        width:80px;
+        border-radius:5px;
+        background-color:white;
+        border-color:white;
+        color:black;
+    }
+
+    .nav-links{
+        flex-direction: column;
+        display: none;
+        width: 95%;
+        height: 750px;
+        background-color:white;
+        position:absolute;
+        top:90px;
+        
+    }
+
+    .nav-links a {
+        display: block;
+        padding:1.5%;
+        border-bottom:1px solid cadetblue;
+        padding-top:20px;
+        font-size:22px;
+        color:cornflowerblue;
+        
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 768px) {
+    .first-row, .second-row, .content {
+        grid-template-columns:2fr;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+
+}
